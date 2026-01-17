@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Org Viewer Pro</title>
+    <title>Org Viewer Light</title>
     <style>
         /* ==========================================================
            1) THEME VARIABLES
@@ -261,7 +261,7 @@
 
     <div class="main-window">
         <header class="main-header">
-            <div id="headerOrgName">Org Viewer Pro</div>
+            <div id="headerOrgName">Org Viewer </div>
             <div id="editModePill" class="edit-mode-pill">Edit Mode</div>
         </header>
         <main class="main-content" id="mainDisplay">
@@ -356,7 +356,7 @@
     // START_DATA_ANCHOR
     let appData = {
         isReadOnly: false,
-        title: "Org Viewer Pro",
+        title: "Org Viewer ",
         logoData: "", 
         settings: {
             theme: "dark", 
@@ -463,7 +463,7 @@
             const toggle = document.createElement('div');
             toggle.className = 'toggle-btn'; toggle.textContent = '−';
             toggle.onclick = (e) => {
-                e.stopPropagation();
+                e.stoppagation();
                 const childUl = li.querySelector('ul.children-list');
                 const isHidden = childUl.classList.toggle('hidden');
                 toggle.textContent = isHidden ? '+' : '−';
@@ -634,7 +634,7 @@
 
     function addChild(parentId, e) {
         if (appData.isReadOnly) return;
-        e.stopPropagation();
+        e.stoppagation();
         const res = findNodeAndParent(parentId, appData.tree);
         const newId = 'n' + Date.now();
         if(!res.node.children) res.node.children = [];
@@ -645,7 +645,7 @@
 
     function deleteNode(id, e) {
         if (appData.isReadOnly) return;
-        e.stopPropagation();
+        e.stoppagation();
         const res = findNodeAndParent(id, appData.tree);
         if (res.parent && confirm("Delete record?")) {
             res.parent.children = res.parent.children.filter(c => c.id !== id);
