@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Org Chart Light Light</title>
+    <title>Org Chart Light</title>
     <style>
         /* ==========================================================
            1) THEME VARIABLES
@@ -463,7 +463,7 @@
             const toggle = document.createElement('div');
             toggle.className = 'toggle-btn'; toggle.textContent = '−';
             toggle.onclick = (e) => {
-                e.stoppagation();
+                e.stopPropagation();
                 const childUl = li.querySelector('ul.children-list');
                 const isHidden = childUl.classList.toggle('hidden');
                 toggle.textContent = isHidden ? '+' : '−';
@@ -634,7 +634,7 @@
 
     function addChild(parentId, e) {
         if (appData.isReadOnly) return;
-        e.stoppagation();
+        e.stopPropagation();
         const res = findNodeAndParent(parentId, appData.tree);
         const newId = 'n' + Date.now();
         if(!res.node.children) res.node.children = [];
@@ -645,7 +645,7 @@
 
     function deleteNode(id, e) {
         if (appData.isReadOnly) return;
-        e.stoppagation();
+        e.stopPropagation();
         const res = findNodeAndParent(id, appData.tree);
         if (res.parent && confirm("Delete record?")) {
             res.parent.children = res.parent.children.filter(c => c.id !== id);
