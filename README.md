@@ -1,5 +1,5 @@
 🏢 Org Chart Light
-Org Chart Light is a simple, lightweight organizational chart builder and viewer that runs entirely in your browser. It’s designed for teams that need a quick, no-fuss way to visualize their hierarchy without the overhead of complex HR software or heavy frameworks.
+A lightweight organizational chart builder and viewer that runs entirely in your browser. It’s designed for teams that need a quick, no-fuss way to visualize their hierarchy without the overhead of complex HR software or heavy frameworks.
 
 ✨ What makes it "Light"?
 Zero Dependencies: No React, No D3, no external libraries. It’s just one file that works instantly.
